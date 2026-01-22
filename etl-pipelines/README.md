@@ -28,3 +28,11 @@ to the generation of analytical datasets used by dashboards and reports.
 
 ![ETL Pipeline Overview](etl-pipeline-overview.png)
 
+
+### Downstream usage
+
+The datasets produced by these pipelines are consumed by analytical
+dashboards and operational reports, such as:
+- Client Profile Dashboard
+- Daily Operational Monitoring Report
+
