@@ -20,3 +20,11 @@ presentation purposes.
 
 **Tools:** SQL, ETL orchestration tools, Data modeling
 
+
+### Pipeline overview
+
+The image below illustrates the end-to-end ETL flow, from raw data ingestion
+to the generation of analytical datasets used by dashboards and reports.
+
+![ETL Pipeline Overview](etl-pipeline-overview.png)
+
