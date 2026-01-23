@@ -19,3 +19,8 @@ presentation purposes.
 - Week-over-week performance
 
 **Tools:** Tableau, SQL
+
+
+### Report Snapshot
+
+![Daily Operational Monitoring](daily-operational-report.png)
