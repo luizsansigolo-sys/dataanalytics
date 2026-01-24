@@ -12,10 +12,10 @@ At this stage, the data is:
 
 No business metrics or aggregations are applied at this layer.
 
-### Operations Data – Staging Layer
+## Operations Data – Staging Layer
 
 The operations dataset is sourced from the raw `operation_v2` table and
-represents all investment opportunities offered on the platform.
+represents all operations that were offered and selled on the platform.
 
 At this stage, the data undergoes extensive normalization and classification
 to address historical inconsistencies and missing metadata.
