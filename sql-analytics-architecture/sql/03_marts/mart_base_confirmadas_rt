@@ -1,23 +1,39 @@
-### Example: Real-Time Base for Dashboards
-
-The following example illustrates a thin table designed to support fast
-dashboard queries by limiting the number of columns and joins.
-
-```sql
 SELECT
-    transaction_date,
-    operation_id,
-    originadora,
-    tese,
-    distribution_channel,
-    client_type,
-    SUM(amount_confirmed) AS total_volume,
-    SUM(custody_amount)   AS total_custody
-FROM int_base_confirmadas
-GROUP BY
-    transaction_date,
-    operation_id,
-    originadora,
-    tese,
-    distribution_channel,
-    client_type;
+  ot.transactionId         AS transaction_id,
+  ot.accountId             AS account_id,
+  ot.operationId           AS operation_id,
+  ot.confirmedBySystemDate AS transaction_date,
+  ot.amountConfirmed       AS amount_confirmed,
+  ot.assetSymbol           AS asset_symbol,
+
+  o.Originadora            AS originadora,
+  o.Tese                   AS tese,
+  o.`Nome operação`        AS operation_name,
+  o.operation_start_date   AS operation_start_date,
+  o.TIR                    AS irr,
+  o.Prazo                  AS term,
+
+  CASE
+    WHEN pa.data_primeiro_investimento >= DATE_FORMAT(ot.confirmedBySystemDate, '%Y-%m-01')
+     AND pa.data_primeiro_investimento <  DATE_ADD(DATE_FORMAT(ot.confirmedBySystemDate, '%Y-%m-01'), INTERVAL 1 MONTH)
+    THEN 'Novo'
+    ELSE 'Cliente'
+  END AS client_type,
+
+  CASE
+    WHEN a.Parceiro IS NULL OR a.Parceiro = '' OR LOWER(a.Parceiro) = 'hurst' THEN 'B2C'
+    ELSE 'B2B'
+  END AS distribution_channel
+
+FROM operation_transaction_v2 ot
+LEFT JOIN Clientes_v2_ETL a
+  ON a.id = ot.accountId
+LEFT JOIN operacao_filtrada_v2 o
+  ON o.`id Operacao` = ot.operationId
+LEFT JOIN Primeiro_aporte pa
+  ON pa.accountId = a.id
+WHERE
+  ot.transactionStatus = 'confirmed'
+  AND ot.origin <> 'HCP__EXCHANGE'
+  AND (a.Parceiro IS NULL OR a.Parceiro NOT IN ('VITREO','BTG'))
+  AND a.email IS NOT NULL;
