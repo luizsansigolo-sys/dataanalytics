@@ -1,23 +1,17 @@
-## Operations Transactions – Staging Layer
+### Example: Transaction Staging Logic
 
-The operations transactions dataset is sourced from the raw
-`operation_transaction_v2` table and represents individual investment
-transactions executed by clients.
+Below is a simplified example of how transaction records are filtered and
+prepared at the staging layer.
 
-This dataset is the most granular layer of the model and serves as the
-foundation for all volume, revenue, and customer activity metrics.
-
-At this stage, the data is prepared to ensure transactional consistency and
-analytical reliability.
-
-Key transformations include:
-
-- filtering transactions to include only confirmed and valid records
-- exclusion of internal, exchange-based, or non-relevant transaction origins
-- standardization of transactional timestamps and identifiers
-- preservation of transaction-level granularity (no aggregation)
-- preparation of clean keys for integration with client and operation datasets
-
-No financial aggregations, customer classifications, or KPIs are calculated at
-this layer.
-
+```sql
+SELECT
+    ot.transactionId    AS transaction_id,
+    ot.accountId        AS account_id,
+    ot.operationId      AS operation_id,
+    ot.amountConfirmed  AS amount_confirmed,
+    ot.assetSymbol      AS asset_symbol,
+    ot.confirmedBySystemDate AS transaction_date
+FROM operation_transaction_v2 ot
+WHERE
+    ot.transactionStatus = 'confirmed'
+    AND (ot.origin <> 'HCP__EXCHANGE' OR ot.origin IS NULL);
