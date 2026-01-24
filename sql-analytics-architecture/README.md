@@ -58,3 +58,24 @@ Key transformations include:
 
 No financial aggregations, customer classifications, or KPIs are calculated at
 this layer.
+
+
+## Integration Layer – Single Source of Truth
+
+The integration layer combines the cleaned and standardized datasets from the
+staging layer into a unified analytical model.
+
+At this stage, client, operation, and transaction data are joined to establish
+a single source of truth that supports consistent reporting and decision-making
+across the organization.
+
+This layer is responsible for:
+
+- defining canonical relationships between clients, operations, and transactions
+- resolving data conflicts across source systems
+- applying business rules that depend on multiple domains
+- creating derived analytical attributes and metrics
+- ensuring temporal consistency for customer and operational analyses
+
+The core output of this layer is the **Base_confirmadas** dataset, which serves
+as the foundation for all downstream dashboards, KPIs, and analytical marts.
