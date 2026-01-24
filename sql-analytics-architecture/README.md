@@ -79,3 +79,21 @@ This layer is responsible for:
 
 The core output of this layer is the **Base_confirmadas** dataset, which serves
 as the foundation for all downstream dashboards, KPIs, and analytical marts.
+
+
+## Analytics Marts – Performance & Consumption Layer
+
+The analytics marts layer is designed to support fast and reliable consumption
+of data by dashboards and operational reports.
+
+This layer builds on top of the integrated analytical model and focuses on:
+- performance optimization
+- simplified schemas
+- pre-aggregated KPIs aligned with business use cases
+
+Due to the absence of table materialization in the BI tool, thin and purpose-
+built tables were created to reduce query complexity and improve response time.
+
+This approach ensures scalability while keeping maintenance costs low, as all
+marts remain directly dependent on the same upstream integrated source.
+
