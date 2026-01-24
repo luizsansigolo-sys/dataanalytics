@@ -1,1 +1,2 @@
+# SQL Analytics Architecture
 
