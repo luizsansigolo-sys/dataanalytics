@@ -1,0 +1,23 @@
+### Example: Real-Time Base for Dashboards
+
+The following example illustrates a thin table designed to support fast
+dashboard queries by limiting the number of columns and joins.
+
+```sql
+SELECT
+    transaction_date,
+    operation_id,
+    originadora,
+    tese,
+    distribution_channel,
+    client_type,
+    SUM(amount_confirmed) AS total_volume,
+    SUM(custody_amount)   AS total_custody
+FROM int_base_confirmadas
+GROUP BY
+    transaction_date,
+    operation_id,
+    originadora,
+    tese,
+    distribution_channel,
+    client_type;
