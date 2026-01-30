@@ -50,19 +50,9 @@ Higher values indicate stronger cross-sell potential, while lower values highlig
 
 ---
 
-## 🔍 Key Insights
-- Legal-oriented products show strong mutual affinity, suggesting recurring investor profiles
-- Debt-related products act as diversification hubs, connecting multiple categories
-- Crypto products display low overall co-occurrence, reinforcing their niche nature
-- Cultural and alternative assets form distinct behavioral clusters
-- Real estate and structured credit products attract more conservative investors
-
-These patterns allow for **more precise and efficient product recommendation strategies**.
-
----
-
 ## 🛠️ Tools & Stack
 - SQL for data extraction and transformation
+- DAX and PowerQuery used to a second layer transformation
 - Analytical modeling using conditional probabilities
 - Visualization via BI tools
 - Data anonymization for portfolio purposes
@@ -70,15 +60,6 @@ These patterns allow for **more precise and efficient product recommendation str
 > ⚠️ All data shown has been anonymized or adjusted to preserve confidentiality.
 
 ---
-
-## 🚀 Potential Extensions
-- Top-N product recommendations per base product
-- Cross-sell scoring combining affinity and product margin
-- Segmentation by client profile (B2B, B2C, ticket size)
-- Simulation of campaign impact on conversion and revenue
-
----
-
 ## 📬 Author
 **Luiz Sansigolo**  
 Data Analyst | BI | Analytics  
