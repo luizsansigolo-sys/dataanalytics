@@ -10,3 +10,17 @@ high-touch commercial model.
 
 
 ![Customer economics – LTV indexed to CAC (base 100)](images/customer-economics.png)
+
+
+---
+
+## 🧩 Additional Strategic Implications
+
+- Low-ticket acquisition strategies require either significantly lower
+  CAC or highly scalable self-service models to remain sustainable.
+- Scaling customer volume without sufficient lifetime value leads to
+  value dilution rather than growth.
+- Reducing the minimum entry threshold alone is insufficient to drive
+  volume growth, indicating limited elasticity to entry price.
+- Ticket strategy, acquisition channels and operating model must be
+  evaluated together as part of the same economic system.
