@@ -2,18 +2,28 @@ Portfolio of analytics projects focused on SQL modeling, ETL/ELT, BI reporting, 
 
 ## Featured projects
 
-- **SQL Analytics Architecture** — staging → integration → marts (MySQL 8 / Metabase)  
-  ➜ ./sql-analytics-architecture
+**Customer Economics & Strategy**  
+LTV, CAC and entry-ticket analysis supporting pricing, operating model
+and scalability decisions.  
+➜ ./analytics/customer-economics
 
-- **Dashboards & Reports** — Tableau/BI screenshots (sanitized) + narrative  
-  ➜ ./dashboard
+**Product Co-occurrence Analysis**  
+Behavioral affinity matrix identifying cross-sell and product
+recommendation opportunities based on transactional data.  
+➜ ./analytics/product-cooccurrence
 
-- **ETL Pipelines** — pipeline design + orchestration flow (documentation + diagrams)  
-  ➜ ./etl-pipelines
+**SQL Analytics Architecture**  
+Staging → integration → marts (MySQL 8 / Metabase)  
+➜ ./sql-analytics-architecture
 
+**Dashboards & Reports**  
+Tableau / BI screenshots (sanitized) with analytical narrative  
+➜ ./dashboard
 
-## Tooling & skills
-SQL (MySQL 8), Data Modeling, ETL/ELT, Data Quality, BI (Tableau/Metabase), Data Viz, Governance
+**ETL Pipelines**  
+Pipeline design, orchestration flow and documentation  
+➜ ./etl-pipelines
+
 
 ## Next Steps
 
